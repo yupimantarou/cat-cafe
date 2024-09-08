@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,9 @@ class ContactController extends Controller
         return view("contact.complete");
     }
 
-    public function sendMail(Request $request)
+    public function sendMail(ContactRequest $request)
     {
-        $validated = $request->validate([
+        $validated = $request->validated([
         'name' => ['required', 'string', 'max:255'],
         'name_kana' => ['required', 'string', 'max:255', 'regex:/^[ァ-ロワンヴー]*$/u'],
         'phone' => ['nullable', 'regex:/^0(\d-?\d{4}|\d{2}-?\d{3}|\d{3}-?\d{2}|\d{4}-?\d|\d0-?\d{4})-?\d{4}$/'],
