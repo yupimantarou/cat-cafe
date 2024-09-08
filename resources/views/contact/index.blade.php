@@ -39,7 +39,7 @@
         </div>
         <div class="mb-4">
           <label for=name_kana class="block text-left p-1 my-1 font-medium">お名前（フリガナ）<span class="text-white text-xs bg-yellow-400 mx-2 py-1 px-2">必須</span></label>
-          <input id="name_kana" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）タナカタロウ", name="name_kana" value="{{ old("name_kana") }}">
+          <input id="name_kana" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）タナカタロウ" name="name_kana" value="{{ old("name_kana") }}">
           @if($errors->has("name_kana"))
           <p class="text-red-400">{{ $errors->first("name_kana") }}</p>
           @endif
